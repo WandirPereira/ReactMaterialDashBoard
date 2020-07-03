@@ -11,6 +11,7 @@ import ImageIcon from '@material-ui/icons/Image';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
+import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 
 import { Profile, SidebarNav, UpgradePlan } from './components';
 
@@ -49,9 +50,14 @@ const Sidebar = props => {
       icon: <DashboardIcon />
     },
     {
-      title: 'Users',
-      href: '/users',
-      icon: <PeopleIcon />
+      title: 'Tarefas',
+      href: '/tarefas',
+      icon: <FormatListBulletedIcon />
+    },
+    {
+      title: 'Login',
+      href: '/login',
+      icon: <LockOpenIcon />
     },
     {
       title: 'Products',
