@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 
 import { TarefasToolbar, TarefasTable } from './components';
 import mockData from './data';
+import axios from 'axios'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,7 +17,17 @@ const useStyles = makeStyles(theme => ({
 const TarefaList = () => {
   const classes = useStyles();
 
-  const [tarefas] = useState(mockData);
+  const [tarefas] = useState([]);
+
+  const salvar = (tarefa) => {
+      axios.post('https://minhastarefas-api.herokuapp.com/tarefas', tarefa, {
+        headers: {'x-tenant-id'  : 'wandir@gmail.com'}
+      }).then(response => {
+          console.log(response.data)
+      }).catch(erro => {
+          console.log(erro)
+      })
+  }
 
   return (
     <div className={classes.root}>
